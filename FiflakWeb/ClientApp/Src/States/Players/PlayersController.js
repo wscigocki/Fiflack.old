@@ -3,6 +3,10 @@
 
     $ctrl.Name = "Players screen";
     $ctrl.Players = [];
+    $ctrl.modalWindowVisible = false;
+
+    $ctrl.PlayerName = 'new player';
+    $ctrl.ModalWindowTitle = '';
 
     $ctrl.GetPlayers = function () {
 
@@ -18,24 +22,30 @@
     };
 
     $ctrl.ShowNewPlayerWindow = function () {
-        $ctrl.ShowModalWindow();
+
+        $ctrl.ModalWindowTitle = 'Dodaj nowego gracza';
+        $ctrl.modalWindowVisible = true;
+
+        console.log($ctrl.modalWindowVisible);
+
+        //$ctrl.ShowModalWindow();
     };
 
-    $ctrl.ShowModalWindow = function () {
-        var element = angular.element('#exampleModal');
-        console.log(element);
-        element.modal('show');
-    };
+    //$ctrl.ShowModalWindow = function () {
+    //    var element = angular.element('#exampleModal');
+    //    console.log(element);
+    //    element.modal('show');
+    //};
 
-    $ctrl.HideModalWindow = function () {
-        var element = angular.element('#exampleModal');
-        console.log(element);
-        element.modal('hide');
-    };
+    //$ctrl.HideModalWindow = function () {
+    //    var element = angular.element('#exampleModal');
+    //    console.log(element);
+    //    element.modal('hide');
+    //};
 
     $ctrl.AddPlayer = function () {
 
-        $ctrl.HideModalWindow();
+        //$ctrl.HideModalWindow();
 
         var promise = PlayersService.AddPlayer('Default name');
         promise.then(

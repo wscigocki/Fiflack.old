@@ -94,6 +94,8 @@
     <Content Include="ClientApp\Library\angular-ui-router.min.js" />
     <Content Include="ClientApp\Library\angular.min.js" />
     <Content Include="ClientApp\Src\App.js" />
+    <Content Include="ClientApp\Src\Components\ModalWindow\ModalWindow.html" />
+    <Content Include="ClientApp\Src\Components\ModalWindow\ModalWindowController.js" />
     <Content Include="ClientApp\Src\Config.js" />
     <Content Include="ClientApp\Src\Services\PlayersService.js" />
     <Content Include="ClientApp\Src\States\Players\Players.html" />
