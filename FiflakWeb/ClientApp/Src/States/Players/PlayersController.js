@@ -1,4 +1,4 @@
-﻿function PlayersController(PlayersService) {
+﻿function PlayersController($uibModal, $log, PlayersService) {
     var $ctrl = this;
 
     $ctrl.Name = "Players screen";
@@ -23,13 +23,45 @@
 
     $ctrl.ShowNewPlayerWindow = function () {
 
+        console.log($ctrl.modalWindowVisible);
+
         $ctrl.ModalWindowTitle = 'Dodaj nowego gracza';
-        $ctrl.modalWindowVisible = true;
+        //$ctrl.modalWindowVisible = true;
+
+        $ctrl.open();
 
         console.log($ctrl.modalWindowVisible);
 
         //$ctrl.ShowModalWindow();
     };
+
+    $ctrl.open = function (size, parentSelector) {
+        var parentElem = parentSelector ?
+            angular.element($document[0].querySelector('.modal-demo ' + parentSelector)) : undefined;
+        var modalInstance = $uibModal.open({
+            animation: true,
+            ariaLabelledBy: 'modal-title',
+            ariaDescribedBy: 'modal-body',
+            templateUrl: 'ClientApp/Src/States/Players/NewPlayerWindow.html',
+            controller: 'ModalInstanceCtrl',
+            controllerAs: '$ctrl',
+            size: 'sm',
+            appendTo: parentElem,
+            //resolve: {
+            //    items: function () {
+            //        return $ctrl.items;
+            //    }
+            //}
+        });
+
+        modalInstance.result.then(function (selectedItem) {
+            $log.info('Modal approved at: ' + new Date());
+        }, function () {
+            $log.info('Modal dismissed at: ' + new Date());
+        });
+    };
+
+
 
     //$ctrl.ShowModalWindow = function () {
     //    var element = angular.element('#exampleModal');
