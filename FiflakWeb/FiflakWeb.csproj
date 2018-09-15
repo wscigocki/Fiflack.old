@@ -102,7 +102,8 @@
     <Content Include="ClientApp\Src\Components\ModalWindow\ModalWindowController.js" />
     <Content Include="ClientApp\Src\Config.js" />
     <Content Include="ClientApp\Src\Services\PlayersService.js" />
-    <Content Include="ClientApp\Src\States\Players\NewPlayerWindow.html" />
+    <Content Include="ClientApp\Src\States\Players\EditPlayerDlg.html" />
+    <Content Include="ClientApp\Src\States\Players\EditPlayerDlgController.js" />
     <Content Include="ClientApp\Src\States\Players\Players.html" />
     <Content Include="ClientApp\Src\States\Players\PlayersController.js" />
     <Content Include="Global.asax" />

@@ -22,6 +22,14 @@
         });
     }
 
+    service.GetPlayer = function (id) {
+        return $http({
+            method: 'GET',
+            url: '/api/players',
+            params: { id: id }
+        });
+    }
+
     service.DeletePlayer = function (id) {
         return $http({
             method: 'DELETE',
@@ -30,20 +38,37 @@
         });
     }
 
-    service.AddPlayer = function (name) {
+    service.AddPlayer = function (newPlayer) {
 
+        console.log('newPlayer', newPlayer);
         var player = {
             Id: -1,
-            Name: name,
-            Email: 'qqqqq'
+            Name: newPlayer.name,
+            Email: newPlayer.email
         };
 
-        console.log(player);
+        console.log('player', player);
 
 
         return $http({
             method: 'POST',
             url: '/api/players',
+            data: player
+        });
+    }
+
+    service.UpdatePlayer = function (playerId, updatedPlayer) {
+
+        var player = {
+            Id: playerId,
+            Name: updatedPlayer.name,
+            Email: updatedPlayer.email
+        };
+
+        return $http({
+            method: 'PUT',
+            url: '/api/players',
+            params: { id: playerId },
             data: player
         });
     }

@@ -10,6 +10,7 @@
 
         .controller('PlayersController', PlayersController)
         .controller('ModalWindowController', ModalWindowController)
+        .controller('EditPlayerDlgController', EditPlayerDlgController)
 
         .controller('ModalInstanceCtrl', function ($uibModalInstance) {
             var $ctrl = this;
